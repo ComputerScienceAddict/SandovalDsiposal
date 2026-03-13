@@ -7,11 +7,6 @@ const services = [
     image: '/junk-team.jpg',
   },
   {
-    title: 'Residential & Commercial Clean Outs',
-    description: 'Full-service cleanouts for homes, offices, and rental properties. Efficient and thorough.',
-    image: '/junk-service-1.jpg',
-  },
-  {
     title: 'Light Demolition',
     description: 'Removal of construction debris including drywall, wood, pallets, and concrete.',
     image: '/junk-hero.jpg',
