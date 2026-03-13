@@ -7,8 +7,8 @@ export default function AboutSection() {
         <div className="grid gap-8 sm:gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
           <div className="relative aspect-[4/3] overflow-hidden rounded-xl shadow-lg ring-1 ring-stone-900/5">
             <Image
-              src="/owner-truck.png"
-              alt="Sandoval Commercial Disposal owner with truck and trailer – professional junk removal in Southern California"
+              src="/truck-trailer.png"
+              alt="Sandoval Commercial Disposal truck and dump trailer – professional junk removal in Southern California"
               fill
               className="object-cover object-center"
               sizes="(max-width: 1024px) 100vw, 50vw"

@@ -7,16 +7,20 @@ import Link from 'next/link';
 // Exclude duplicate images (gallery-2, gallery-5, gallery-6 duplicate gallery-1)
 const GALLERY_INDICES = [1, 3, 4, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29];
 
+// Owner photo (replaced in About section by truck-trailer.png)
+const EXTRA_IMAGES = [{ src: '/owner-truck.png', alt: 'Sandoval Commercial Disposal owner with truck and trailer' }];
+
 export const metadata = {
   title: 'Gallery | Sandoval Commercial Disposal',
   description: 'View our junk removal, demolition, and clean-out projects across Southern California.',
 };
 
 export default function GalleryPage() {
-  const images = GALLERY_INDICES.map((n, i) => ({
+  const galleryImages = GALLERY_INDICES.map((n, i) => ({
     src: `/gallery/gallery-${n}.png`,
     alt: `Sandoval Commercial Disposal project ${i + 1}`,
   }));
+  const images = [...EXTRA_IMAGES, ...galleryImages];
 
   return (
     <>
