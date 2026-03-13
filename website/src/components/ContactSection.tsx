@@ -52,7 +52,7 @@ export default function ContactSection() {
           </div>
           <form
             onSubmit={handleSubmit}
-            className="rounded-xl border-2 border-stone-300 bg-stone-50 p-5 sm:p-6"
+            className="rounded-2xl border-2 border-stone-300 bg-stone-50 p-5 sm:p-6 shadow-sm"
           >
             <div className="grid gap-4 sm:grid-cols-2">
               <div>

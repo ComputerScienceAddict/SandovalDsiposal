@@ -123,7 +123,7 @@ export default function Navbar() {
       </nav>
 
       {mobileOpen && (
-        <div className="border-t border-[#C48376]/30 bg-[#F5ECD6] px-4 py-4 lg:hidden">
+        <div className="border-t border-[#C48376]/30 bg-[#F5ECD6] px-4 py-4 lg:hidden animate-ping-in max-h-[80vh] overflow-y-auto">
           <div className="flex flex-col">
             {navLinks.map((link) =>
               link.href === '/#tiktok' ? (

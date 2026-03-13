@@ -3,7 +3,8 @@ import Footer from '@/components/Footer';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const GALLERY_COUNT = 29;
+// Exclude duplicate images (gallery-2, gallery-5, gallery-6 duplicate gallery-1)
+const GALLERY_INDICES = [1, 3, 4, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29];
 
 export const metadata = {
   title: 'Gallery | Sandoval Commercial Disposal',
@@ -11,16 +12,16 @@ export const metadata = {
 };
 
 export default function GalleryPage() {
-  const images = Array.from({ length: GALLERY_COUNT }, (_, i) => ({
-    src: `/gallery/gallery-${i + 1}.png`,
+  const images = GALLERY_INDICES.map((n, i) => ({
+    src: `/gallery/gallery-${n}.png`,
     alt: `Sandoval Commercial Disposal project ${i + 1}`,
   }));
 
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-[#F5ECD6]">
-        <section className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-14 lg:px-8 pb-[max(2rem,env(safe-area-inset-bottom))]">
+      <main className="min-h-screen bg-[#F5ECD6] pb-24 sm:pb-0">
+        <section className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-14 lg:px-8 pb-[max(3rem,calc(2rem+env(safe-area-inset-bottom)))]">
           <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <Link
@@ -37,11 +38,11 @@ export default function GalleryPage() {
               </p>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3 md:grid-cols-4 md:gap-4 lg:grid-cols-5 lg:gap-4">
+          <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 sm:gap-3 md:grid-cols-4 md:gap-4 lg:grid-cols-5 lg:gap-4">
             {images.map((img, i) => (
               <div
                 key={i}
-                className="group relative aspect-square overflow-hidden rounded-lg bg-stone-200 shadow-sm ring-1 ring-stone-800/5 active:scale-[0.98] transition-transform duration-200"
+                className="group relative aspect-square overflow-hidden rounded-xl bg-stone-200 shadow-md ring-1 ring-stone-800/5 active:scale-[0.97] transition-transform duration-200"
               >
                 <Image
                   src={img.src}

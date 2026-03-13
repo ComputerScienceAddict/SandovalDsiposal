@@ -2,7 +2,7 @@ import { BUSINESS } from '@/lib/constants';
 
 export default function CTASection() {
   return (
-    <section className="relative overflow-hidden border-t-4 border-stone-900 bg-stone-900 py-12 sm:py-20">
+    <section className="relative overflow-hidden border-t-4 border-stone-900 bg-stone-900 py-14 sm:py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center gap-6 sm:gap-8 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left">
           <div>

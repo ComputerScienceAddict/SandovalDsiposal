@@ -4,7 +4,7 @@ const services = [
   {
     title: 'Junk Removal',
     description: 'Complete junk removal services for residential and commercial properties. Same-day service available.',
-    image: '/junk-cleanout.jpg',
+    image: '/junk-team.jpg',
   },
   {
     title: 'Residential & Commercial Clean Outs',
@@ -12,19 +12,14 @@ const services = [
     image: '/junk-service-1.jpg',
   },
   {
-    title: 'Property Clean Outs',
-    description: 'Estate cleanouts, storage unit clearing, and vacated property services.',
-    image: '/junk-before-1.jpg',
-  },
-  {
     title: 'Light Demolition',
     description: 'Removal of construction debris including drywall, wood, pallets, and concrete.',
-    image: '/junk-service-2.jpg',
+    image: '/junk-hero.jpg',
   },
   {
     title: 'Patio, Gazebo & Outdoor Removal',
     description: 'Professional demolition and removal of patios, gazebos, fencing, and yard structures.',
-    image: '/junk-backyard.jpg',
+    image: '/junk-service-2.jpg',
   },
   {
     title: 'Spa & Hot Tub Removal',
@@ -39,7 +34,7 @@ const services = [
   {
     title: 'Furniture & Appliance Removal',
     description: 'Proper disposal of appliances, furniture, and mattresses with responsible recycling.',
-    image: '/junk-before-1.jpg',
+    image: '/junk-trailer.jpg',
   },
   {
     title: 'Yard Debris Removal',
@@ -49,7 +44,7 @@ const services = [
   {
     title: 'Garage & Estate Clean Outs',
     description: 'Comprehensive clearing of garages, storage units, and estate properties.',
-    image: '/junk-work-in-progress.jpg',
+    image: '/junk-cleanout.jpg',
   },
 ];
 
@@ -61,7 +56,7 @@ const equipment = [
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="bg-[#E8DCC4]/60 py-16 sm:py-24">
+    <section id="services" className="bg-[#E8DCC4]/60 py-12 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <h2 className="font-bold text-stone-900 text-2xl sm:text-3xl">
           Our Services
@@ -69,13 +64,13 @@ export default function ServicesSection() {
         <p className="mt-2 text-stone-600 text-sm">
           Comprehensive removal services for residential and commercial properties throughout Southern California.
         </p>
-        {/* Mobile: horizontal scroll */}
-        <div className="mt-8 sm:hidden -mx-4 overflow-x-auto scrollbar-hide pb-2">
-          <div className="flex gap-3 px-4">
+        {/* Mobile: horizontal scroll with snap */}
+        <div className="mt-8 sm:hidden -mx-4 overflow-x-auto scrollbar-hide pb-4 snap-x snap-mandatory scroll-smooth">
+          <div className="flex gap-4 pl-4 pr-4">
             {services.map((service) => (
               <div
                 key={service.title}
-                className="w-[260px] shrink-0 overflow-hidden rounded-xl border border-[#C48376]/40 bg-[#F5ECD6] snap-start"
+                className="w-[280px] shrink-0 overflow-hidden rounded-2xl border-2 border-[#C48376]/30 bg-[#F5ECD6] shadow-md snap-center"
               >
                 <div className="relative aspect-[3/2] overflow-hidden">
                   <Image
@@ -86,7 +81,7 @@ export default function ServicesSection() {
                     sizes="260px"
                   />
                 </div>
-                <div className="border-t border-stone-200 p-3">
+                <div className="border-t border-stone-200 p-4">
                   <h3 className="font-semibold text-stone-900 text-sm">
                     {service.title}
                   </h3>

@@ -113,7 +113,7 @@ const CurvedLoop: FC<CurvedLoopProps> = ({
   const cursorStyle = interactive ? (dragRef.current ? 'grabbing' : 'grab') : 'auto';
 
   const containerClass = banner
-    ? 'h-12 min-[400px]:h-11 sm:h-10 flex items-center justify-center w-full bg-[#C48376] overflow-hidden touch-none'
+    ? 'h-14 sm:h-10 flex items-center justify-center w-full bg-[#C48376] overflow-hidden touch-none'
     : 'min-h-screen flex items-center justify-center w-full';
 
   const svgClass = banner

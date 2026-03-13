@@ -3,11 +3,11 @@ import { BUSINESS } from '@/lib/constants';
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden border-b border-[#C48376]/40 bg-[#E8DCC4]">
-      <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-20 lg:px-8 lg:py-24 min-[480px]:py-14">
-        <div className="grid gap-6 sm:gap-10 lg:grid-cols-2 lg:items-end lg:gap-16">
+    <section className="relative overflow-hidden border-b border-[#C48376]/40 bg-[#E8DCC4] min-h-[70vh] sm:min-h-0">
+      <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-20 lg:px-8 lg:py-24 min-[480px]:py-16">
+        <div className="grid gap-8 sm:gap-10 lg:grid-cols-2 lg:items-end lg:gap-16">
           <div className="order-2 lg:order-1">
-            <h1 className="font-bold text-stone-900 text-2xl leading-snug sm:text-3xl lg:text-4xl tracking-tight">
+            <h1 className="font-bold text-stone-900 text-2xl leading-tight sm:text-3xl sm:leading-snug lg:text-4xl tracking-tight">
               Professional Junk Removal Services
             </h1>
             <p className="mt-4 sm:mt-5 text-stone-700 text-sm sm:text-base leading-relaxed max-w-lg">
@@ -31,7 +31,7 @@ export default function Hero() {
               Fast response times. Upfront pricing. Same-day service available.
             </p>
           </div>
-          <div className="relative aspect-[4/3] sm:aspect-[16/10] overflow-hidden rounded-xl order-1 lg:order-2 lg:aspect-[4/3]">
+          <div className="relative aspect-[4/3] sm:aspect-[16/10] overflow-hidden rounded-2xl order-1 lg:order-2 lg:aspect-[4/3] shadow-lg ring-1 ring-stone-900/5">
             {/* Image: truck, work-in-progress, or backyard cleanout. Place files in /public */}
             <Image
               src="/junk-hero.jpg"

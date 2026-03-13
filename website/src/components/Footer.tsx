@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="relative overflow-hidden bg-[#6B4039] text-[#F5ECD6]">
       {/* Top accent */}
       <div className="h-1 bg-gradient-to-r from-[#C48376] via-[#A96D62] to-[#C48376]" />
-      <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-16 lg:px-8 pb-[max(2.5rem,env(safe-area-inset-bottom))]">
+      <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-16 lg:px-8 pb-[max(2.5rem,calc(1rem+env(safe-area-inset-bottom)))]">
         <div className="grid gap-10 sm:gap-12 lg:grid-cols-12 lg:gap-10 text-center sm:text-left">
           {/* Brand */}
           <div className="lg:col-span-5 flex flex-col items-center sm:items-start">
