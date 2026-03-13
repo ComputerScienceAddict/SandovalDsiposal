@@ -14,7 +14,7 @@ const Q_AND_A: { q: string; a: string }[] = [
   },
   {
     q: 'What services do you offer?',
-    a: 'We offer junk removal, property cleanouts, light demolition, patio and gazebo removal, spa and hot tub removal, heavy item hauling (pianos, fitness equipment, office furniture), furniture and appliance removal, yard debris, and construction debris removal. We operate dumpster trailers and a 17-foot box truck.',
+    a: 'We offer junk removal, property cleanouts, light demolition, patio and gazebo removal, spa and hot tub removal, heavy item hauling (pianos, fitness equipment, office furniture), furniture and appliance removal, yard debris, and construction debris removal. We operate dumpster trailers.',
   },
   {
     q: 'What does junk removal cost?',

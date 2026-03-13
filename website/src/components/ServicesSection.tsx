@@ -46,19 +46,30 @@ const services = [
 const equipment = [
   '12 Yard Dumpster Trailer',
   '14 Yard Dump Trailer',
-  '17 Foot Box Truck for Moving & Clean Outs',
+  '14 ft Dump Trailer',
 ];
 
 export default function ServicesSection() {
   return (
     <section id="services" className="bg-[#E8DCC4]/60 py-12 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <h2 className="font-bold text-stone-900 text-2xl sm:text-3xl">
-          Our Services
-        </h2>
-        <p className="mt-2 text-stone-600 text-sm">
-          Comprehensive removal services for residential and commercial properties throughout Southern California.
-        </p>
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between sm:gap-4">
+          <div>
+            <h2 className="font-bold text-stone-900 text-2xl sm:text-3xl">
+              Our Services
+            </h2>
+            <p className="mt-2 text-stone-600 text-sm">
+              Comprehensive removal services for residential and commercial properties throughout Southern California.
+            </p>
+          </div>
+          <a
+            href="/gallery"
+            className="mt-4 sm:mt-0 inline-flex items-center justify-center gap-2 min-h-[44px] rounded-full border-2 border-[#C48376] px-5 py-2.5 text-[#C48376] text-sm font-bold hover:bg-[#C48376] hover:text-white active:scale-[0.98] transition-all shrink-0"
+          >
+            View Our Work
+            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+          </a>
+        </div>
         {/* Mobile: horizontal scroll with snap */}
         <div className="mt-8 sm:hidden -mx-4 overflow-x-auto scrollbar-hide pb-4 snap-x snap-mandatory scroll-smooth">
           <div className="flex gap-4 pl-4 pr-4">

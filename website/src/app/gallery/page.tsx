@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import StickyCallCTA from '@/components/StickyCallCTA';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -56,6 +57,7 @@ export default function GalleryPage() {
           </div>
         </section>
       </main>
+      <StickyCallCTA />
       <Footer />
     </>
   );

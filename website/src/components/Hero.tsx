@@ -35,7 +35,7 @@ export default function Hero() {
             {/* Image: truck, work-in-progress, or backyard cleanout. Place files in /public */}
             <Image
               src="/junk-hero.jpg"
-              alt="Junk removal truck ready for service"
+              alt="Junk removal and hauling services"
               fill
               className="object-cover object-center"
               priority

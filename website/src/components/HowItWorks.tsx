@@ -29,7 +29,7 @@ export default function HowItWorks() {
           <div className="relative aspect-[4/3] overflow-hidden rounded-xl order-1 lg:order-2">
             <Image
               src="/junk-work-in-progress.jpg"
-              alt="Junk removal and remodeling cleanup crew loading truck"
+              alt="Junk removal and remodeling cleanup crew at work"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"

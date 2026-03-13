@@ -5,13 +5,14 @@ export default function AboutSection() {
     <section id="about" className="border-t border-[#C48376]/30 bg-[#F5ECD6] py-12 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-8 sm:gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
-          <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-xl shadow-lg ring-1 ring-stone-900/5">
             <Image
-              src="/junk-cleanout.jpg"
-              alt="Junk removal and cleanout work"
+              src="/owner-truck.png"
+              alt="Sandoval Commercial Disposal owner with truck and trailer – professional junk removal in Southern California"
               fill
-              className="object-cover"
+              className="object-cover object-center"
               sizes="(max-width: 1024px) 100vw, 50vw"
+              priority
             />
           </div>
           <div>

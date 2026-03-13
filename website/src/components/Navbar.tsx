@@ -7,11 +7,11 @@ import Image from 'next/image';
 import { BUSINESS } from '@/lib/constants';
 
 const navLinks = [
+  { href: '/gallery', label: 'Gallery' },
   { href: '/#about', label: 'About' },
   { href: '/#services', label: 'What we haul' },
   { href: '/#how-it-works', label: 'Process' },
   { href: '/#why-us', label: 'Why us' },
-  { href: '/gallery', label: 'Gallery' },
   { href: '/#tiktok', label: 'Videos' },
   { href: '/#contact', label: 'Contact' },
 ];
