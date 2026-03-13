@@ -4,7 +4,7 @@ const services = [
   {
     title: 'Junk Removal',
     description: 'Complete junk removal services for residential and commercial properties. Same-day service available.',
-    image: '/junk-team.jpg',
+    image: '/junk-cleanout.jpg',
   },
   {
     title: 'Light Demolition',
@@ -14,12 +14,12 @@ const services = [
   {
     title: 'Patio, Gazebo & Outdoor Removal',
     description: 'Professional demolition and removal of patios, gazebos, fencing, and yard structures.',
-    image: '/junk-service-2.jpg',
+    image: '/junk-backyard.jpg',
   },
   {
     title: 'Spa & Hot Tub Removal',
     description: 'Safe removal and disposal of above-ground spas and hot tubs.',
-    image: '/junk-service-3.jpg',
+    image: '/junk-service-2.jpg',
   },
   {
     title: 'Heavy Item Hauling',
@@ -39,7 +39,7 @@ const services = [
   {
     title: 'Garage & Estate Clean Outs',
     description: 'Comprehensive clearing of garages, storage units, and estate properties.',
-    image: '/junk-cleanout.jpg',
+    image: '/junk-service-3.jpg',
   },
 ];
 
