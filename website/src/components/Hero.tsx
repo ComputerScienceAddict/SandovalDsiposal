@@ -1,21 +1,63 @@
 'use client';
 
-import { useRef, useEffect, useCallback } from 'react';
+import { useRef, useEffect, useCallback, useState } from 'react';
 import { BUSINESS } from '@/lib/constants';
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [needsTap, setNeedsTap] = useState(false);
 
   const tryPlay = useCallback(() => {
     const video = videoRef.current;
     if (!video) return;
     video.muted = true;
+    video.volume = 0;
+    video.playsInline = true;
+    video.setAttribute('playsinline', '');
+    video.setAttribute('webkit-playsinline', '');
+    video.setAttribute('muted', '');
     const p = video.play();
-    if (p) p.catch(() => {});
+    if (p) {
+      p.then(() => setNeedsTap(false)).catch(() => setNeedsTap(true));
+    }
   }, []);
 
   useEffect(() => {
-    tryPlay();
+    const video = videoRef.current;
+    if (!video) return;
+
+    const t1 = setTimeout(tryPlay, 0);
+    const t2 = setTimeout(tryPlay, 100);
+    const t3 = setTimeout(tryPlay, 300);
+    const t4 = setTimeout(tryPlay, 800);
+
+    const raf = requestAnimationFrame(() => tryPlay());
+
+    video.addEventListener('loadedmetadata', tryPlay);
+    video.addEventListener('canplay', tryPlay);
+    video.addEventListener('canplaythrough', tryPlay);
+    video.addEventListener('loadeddata', tryPlay);
+
+    // iOS: first touch/scroll anywhere can unlock video
+    const onFirstInteraction = () => {
+      tryPlay();
+    };
+    document.addEventListener('touchstart', onFirstInteraction, { once: true, passive: true });
+    document.addEventListener('scroll', onFirstInteraction, { once: true, passive: true });
+
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+      clearTimeout(t3);
+      clearTimeout(t4);
+      cancelAnimationFrame(raf);
+      video.removeEventListener('loadedmetadata', tryPlay);
+      video.removeEventListener('canplay', tryPlay);
+      video.removeEventListener('canplaythrough', tryPlay);
+      video.removeEventListener('loadeddata', tryPlay);
+      document.removeEventListener('touchstart', onFirstInteraction);
+      document.removeEventListener('scroll', onFirstInteraction);
+    };
   }, [tryPlay]);
 
   return (
@@ -47,9 +89,23 @@ export default function Hero() {
               Fast response times. Upfront pricing. Same-day service available.
             </p>
           </div>
-          <div className="hero-video relative aspect-[16/10] sm:aspect-[16/10] overflow-hidden rounded-2xl order-1 lg:order-2 lg:aspect-[4/3] shadow-xl ring-1 ring-stone-900/10">
+          <div
+            className="hero-video relative aspect-[16/10] sm:aspect-[16/10] overflow-hidden rounded-2xl order-1 lg:order-2 lg:aspect-[4/3] shadow-xl ring-1 ring-stone-900/10"
+            onClick={needsTap ? tryPlay : undefined}
+          >
+            {needsTap && (
+              <div
+                className="absolute inset-0 z-10 flex items-center justify-center bg-black/20 cursor-pointer"
+                onClick={tryPlay}
+              >
+                <span className="rounded-full bg-white/90 px-5 py-2.5 text-sm font-semibold text-stone-800 shadow-lg">
+                  Tap to play
+                </span>
+              </div>
+            )}
             <video
               ref={videoRef}
+              src="/hero-video.mp4"
               autoPlay
               muted
               loop
@@ -59,12 +115,7 @@ export default function Hero() {
               disableRemotePlayback
               className="absolute inset-0 h-full w-full object-cover"
               aria-label="Sandoval Commercial Disposal junk removal in action"
-              onCanPlay={tryPlay}
-              onLoadedData={tryPlay}
-            >
-              <source src="/hero-video.mp4" type="video/mp4" />
-              <source src="/hero-video.mov" type="video/quicktime" />
-            </video>
+            />
           </div>
         </div>
       </div>
