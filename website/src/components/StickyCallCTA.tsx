@@ -9,10 +9,10 @@ export default function StickyCallCTA() {
   const isGallery = pathname === '/gallery';
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 flex items-center justify-center gap-2 sm:gap-3 bg-[#F5ECD6]/98 backdrop-blur-md border-t-2 border-[#C48376]/40 px-3 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] md:hidden shadow-[0_-4px_20px_rgba(0,0,0,0.08)]">
+    <div className="fixed bottom-0 left-0 right-0 z-40 flex items-center justify-center gap-2.5 bg-[#F5ECD6]/98 backdrop-blur-md border-t-2 border-[#C48376]/40 px-4 py-3.5 pb-[max(0.875rem,env(safe-area-inset-bottom))] md:hidden shadow-[0_-8px_30px_rgba(0,0,0,0.12)]">
       <Link
         href={isGallery ? '/' : '/gallery'}
-        className="flex items-center justify-center gap-1.5 min-h-[48px] min-w-[80px] rounded-full border-2 border-stone-400 py-2.5 px-4 text-center text-sm font-bold text-stone-700 hover:bg-stone-100 active:scale-[0.97] transition-all"
+        className="flex items-center justify-center gap-1.5 min-h-[50px] min-w-[84px] rounded-full border-2 border-stone-400 py-3 px-4 text-center text-[15px] font-bold text-stone-700 hover:bg-stone-100 active:scale-[0.97] transition-all"
       >
         {isGallery ? (
           <>
@@ -28,13 +28,13 @@ export default function StickyCallCTA() {
       </Link>
       <a
         href={`tel:${BUSINESS.phone.replace(/\D/g, '')}`}
-        className="flex-1 min-w-0 max-w-[140px] min-h-[48px] flex items-center justify-center rounded-full bg-[#C48376] py-2.5 text-center text-white text-sm font-bold shadow-lg shadow-[#C48376]/30 hover:bg-[#A96D62] active:scale-[0.97] transition-all"
+        className="flex-1 min-w-0 max-w-[150px] min-h-[50px] flex items-center justify-center rounded-full bg-[#C48376] py-3 text-center text-white text-[15px] font-bold shadow-lg shadow-[#C48376]/30 hover:bg-[#A96D62] active:scale-[0.97] transition-all"
       >
         Call Now
       </a>
       <a
         href="/#contact"
-        className="flex-1 min-w-0 max-w-[140px] min-h-[48px] flex items-center justify-center rounded-full border-2 border-[#A96D62] py-2.5 text-center text-sm font-bold text-[#A96D62] bg-white/80 hover:bg-[#A96D62] hover:text-white active:scale-[0.97] transition-all"
+        className="flex-1 min-w-0 max-w-[150px] min-h-[50px] flex items-center justify-center rounded-full border-2 border-[#A96D62] py-3 text-center text-[15px] font-bold text-[#A96D62] bg-white/80 hover:bg-[#A96D62] hover:text-white active:scale-[0.97] transition-all"
       >
         Free Quote
       </a>

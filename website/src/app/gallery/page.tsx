@@ -25,7 +25,7 @@ export default function GalleryPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-[#F5ECD6] pb-24 sm:pb-0">
+      <main className="min-h-screen bg-[#F5ECD6] pb-32 sm:pb-0">
         <section className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-14 lg:px-8 pb-[max(3rem,calc(2rem+env(safe-area-inset-bottom)))]">
           <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div>
@@ -43,7 +43,7 @@ export default function GalleryPage() {
               </p>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 sm:gap-3 md:grid-cols-4 md:gap-4 lg:grid-cols-5 lg:gap-4">
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-3 md:grid-cols-4 md:gap-4 lg:grid-cols-5 lg:gap-4">
             {images.map((img, i) => (
               <div
                 key={i}

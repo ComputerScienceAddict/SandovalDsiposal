@@ -2,10 +2,10 @@ import Image from 'next/image';
 
 export default function AboutSection() {
   return (
-    <section id="about" className="border-t border-[#C48376]/30 bg-[#F5ECD6] py-12 sm:py-24">
+    <section id="about" className="border-t border-[#C48376]/30 bg-[#F5ECD6] py-10 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-8 sm:gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
-          <div className="relative aspect-[4/3] overflow-hidden rounded-xl shadow-lg ring-1 ring-stone-900/5">
+        <div className="grid gap-6 sm:gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-xl ring-1 ring-stone-900/5">
             <Image
               src="/truck-trailer.png"
               alt="Sandoval Commercial Disposal truck and dump trailer – professional junk removal in Southern California"

@@ -30,7 +30,7 @@ export default function Home() {
         />
       </div>
       <Navbar />
-      <main className="pb-28 md:pb-0">
+      <main className="pb-32 md:pb-0">
         <Hero />
         <AboutSection />
         <ServicesSection />

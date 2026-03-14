@@ -66,12 +66,12 @@ export default function ServicesSection() {
           </a>
         </div>
         {/* Mobile: horizontal scroll with snap */}
-        <div className="mt-8 sm:hidden -mx-4 overflow-x-auto scrollbar-hide pb-4 snap-x snap-mandatory scroll-smooth">
-          <div className="flex gap-4 pl-4 pr-4">
+        <div className="mt-6 sm:hidden -mx-4 overflow-x-auto scrollbar-hide pb-5 snap-x snap-mandatory scroll-smooth">
+          <div className="flex gap-4 pl-4 pr-6">
             {services.map((service) => (
               <div
                 key={service.title}
-                className="w-[280px] shrink-0 overflow-hidden rounded-2xl border-2 border-[#C48376]/30 bg-[#F5ECD6] shadow-md snap-center"
+                className="w-[288px] shrink-0 overflow-hidden rounded-2xl border-2 border-[#C48376]/25 bg-[#F5ECD6] shadow-lg snap-center"
               >
                 <div className="relative aspect-[3/2] overflow-hidden">
                   <Image
