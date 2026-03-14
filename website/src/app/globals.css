@@ -106,6 +106,44 @@ body {
   animation-play-state: paused;
 }
 
+/* Ribbon banner pulse & move */
+@keyframes ribbon-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    box-shadow: 0 4px 20px rgba(220, 38, 38, 0.4);
+  }
+  50% {
+    opacity: 0.96;
+    transform: scale(1.008) translateY(-2px);
+    box-shadow: 0 6px 28px rgba(220, 38, 38, 0.55);
+  }
+}
+
+@keyframes ribbon-shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.animate-ribbon-pulse {
+  animation: ribbon-pulse 2.2s ease-in-out infinite;
+}
+
+.animate-ribbon-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: ribbon-shimmer 2.5s ease-in-out infinite;
+}
+
 /* Hide native video controls for hero autoplay */
 .hero-video video::-webkit-media-controls {
   display: none !important;

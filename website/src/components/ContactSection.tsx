@@ -28,7 +28,7 @@ export default function ContactSection() {
             <div className="mt-8 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
               <a
                 href={`tel:${BUSINESS.phone.replace(/\D/g, '')}`}
-                className="inline-flex items-center justify-center gap-3 min-h-[50px] rounded-xl bg-[#C48376] px-5 py-3.5 text-white text-[15px] font-bold hover:bg-[#A96D62] active:scale-[0.98] transition-all shadow-md"
+                className="inline-flex items-center justify-center gap-3 min-h-[50px] rounded-xl bg-[#C48376] px-5 py-3.5 text-white text-[15px] font-bold hover:bg-[#A96D62] active:scale-[0.98] transition-all shadow-md touch-manipulation"
               >
                 <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/20">
                   <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -39,14 +39,15 @@ export default function ContactSection() {
               </a>
               <a
                 href={`mailto:${BUSINESS.email}`}
-                className="inline-flex items-center justify-center gap-3 min-h-[50px] rounded-xl border-2 border-[#C48376]/50 bg-white px-5 py-3.5 text-stone-700 text-[15px] font-semibold hover:bg-[#C48376]/10 hover:border-[#C48376] active:scale-[0.98] transition-all"
+                className="inline-flex items-center justify-center gap-3 min-h-[50px] rounded-xl border-2 border-[#C48376]/50 bg-white px-5 py-3.5 text-stone-700 text-[15px] font-semibold hover:bg-[#C48376]/10 hover:border-[#C48376] active:scale-[0.98] transition-all touch-manipulation"
               >
-                <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#C48376]/10">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#C48376]/10">
                   <svg className="h-5 w-5 text-[#C48376]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </span>
-                <span>{BUSINESS.email}</span>
+                <span className="hidden sm:inline">{BUSINESS.email}</span>
+                <span className="sm:hidden">Email Us</span>
               </a>
             </div>
           </div>

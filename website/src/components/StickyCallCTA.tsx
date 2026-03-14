@@ -28,13 +28,13 @@ export default function StickyCallCTA() {
       </Link>
       <a
         href={`tel:${BUSINESS.phone.replace(/\D/g, '')}`}
-        className="flex-1 min-w-0 max-w-[150px] min-h-[50px] flex items-center justify-center rounded-full bg-[#C48376] py-3 text-center text-white text-[15px] font-bold shadow-lg shadow-[#C48376]/30 hover:bg-[#A96D62] active:scale-[0.97] transition-all"
+        className="flex-1 min-w-0 min-h-[50px] flex items-center justify-center rounded-full bg-[#C48376] py-3 text-center text-white text-[15px] font-bold shadow-lg shadow-[#C48376]/30 hover:bg-[#A96D62] active:scale-[0.97] transition-all touch-manipulation"
       >
         Call Now
       </a>
       <a
         href="/#contact"
-        className="flex-1 min-w-0 max-w-[150px] min-h-[50px] flex items-center justify-center rounded-full border-2 border-[#A96D62] py-3 text-center text-[15px] font-bold text-[#A96D62] bg-white/80 hover:bg-[#A96D62] hover:text-white active:scale-[0.97] transition-all"
+        className="flex-1 min-w-0 min-h-[50px] flex items-center justify-center rounded-full border-2 border-[#A96D62] py-3 text-center text-[15px] font-bold text-[#A96D62] bg-white/80 hover:bg-[#A96D62] hover:text-white active:scale-[0.97] transition-all touch-manipulation"
       >
         Free Quote
       </a>

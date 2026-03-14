@@ -2,6 +2,11 @@ import Image from 'next/image';
 
 const services = [
   {
+    title: '14 Yard Heavy Duty Dump Trailer Rental',
+    description: 'Heavy duty 14 yard dump trailer rental for larger projects. Reliable, professional equipment.',
+    image: '/dump-trailer-rental.png',
+  },
+  {
     title: 'Light Demolition',
     description: 'Removal of construction debris including drywall, wood, pallets, and concrete.',
     image: '/junk-hero.jpg',
@@ -30,11 +35,6 @@ const services = [
     title: 'Yard Debris Removal',
     description: 'Removal of branches, brush, leaves, and bulk yard waste. Properties left clean.',
     image: '/junk-backyard.jpg',
-  },
-  {
-    title: '14 Yard Heavy Duty Dump Trailer Rental',
-    description: 'Heavy duty 14 yard dump trailer rental for larger projects. Reliable, professional equipment.',
-    image: '/dump-trailer-rental.png',
   },
 ];
 
@@ -66,8 +66,8 @@ export default function ServicesSection() {
           </a>
         </div>
         {/* Mobile: horizontal scroll with snap */}
-        <div className="mt-6 sm:hidden -mx-4 overflow-x-auto scrollbar-hide pb-5 snap-x snap-mandatory scroll-smooth">
-          <div className="flex gap-4 pl-4 pr-6">
+        <div className="mt-6 sm:hidden -mx-4 overflow-x-auto scrollbar-hide pb-5 snap-x snap-mandatory scroll-smooth touch-pan-x">
+          <div className="flex gap-4 pl-[max(1rem,env(safe-area-inset-left))] pr-6">
             {services.map((service) => (
               <div
                 key={service.title}
