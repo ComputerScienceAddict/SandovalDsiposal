@@ -1,6 +1,20 @@
+'use client';
+
+import { useRef, useEffect } from 'react';
 import { BUSINESS } from '@/lib/constants';
 
 export default function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    // Force play on mount – required for mobile autoplay in some browsers
+    const playPromise = video.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {});
+    }
+  }, []);
   return (
     <section className="relative overflow-hidden border-b border-[#C48376]/40 bg-[#E8DCC4] min-h-0 sm:min-h-0">
       <div className="mx-auto max-w-6xl px-4 pt-4 pb-10 sm:px-6 sm:py-20 lg:px-8 lg:py-24 sm:pt-20">
@@ -32,11 +46,14 @@ export default function Hero() {
           </div>
           <div className="relative aspect-[16/10] sm:aspect-[16/10] overflow-hidden rounded-2xl order-1 lg:order-2 lg:aspect-[4/3] shadow-xl ring-1 ring-stone-900/10">
             <video
+              ref={videoRef}
               src="/hero-video.mov"
               autoPlay
               muted
               loop
               playsInline
+              preload="auto"
+              disablePictureInPicture
               className="absolute inset-0 h-full w-full object-cover"
               aria-label="Sandoval Commercial Disposal junk removal in action"
             />
