@@ -36,11 +36,6 @@ const services = [
     description: 'Removal of branches, brush, leaves, and bulk yard waste. Properties left clean.',
     image: '/junk-backyard.jpg',
   },
-  {
-    title: 'Garage & Estate Clean Outs',
-    description: 'Comprehensive clearing of garages, storage units, and estate properties.',
-    image: '/junk-service-3.jpg',
-  },
 ];
 
 const equipment = [

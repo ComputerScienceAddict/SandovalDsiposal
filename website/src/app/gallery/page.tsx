@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 // Exclude duplicate images (gallery-2, gallery-5, gallery-6 duplicate gallery-1)
-const GALLERY_INDICES = [1, 3, 4, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29];
+const GALLERY_INDICES = [1, 3, 4, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34];
 
 // Owner photo (replaced in About section by truck-trailer.png)
 const EXTRA_IMAGES = [{ src: '/owner-truck.png', alt: 'Sandoval Commercial Disposal owner with truck and trailer' }];

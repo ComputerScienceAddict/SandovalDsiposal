@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { BUSINESS } from '@/lib/constants';
 
 export default function Hero() {
@@ -32,14 +31,14 @@ export default function Hero() {
             </p>
           </div>
           <div className="relative aspect-[4/3] sm:aspect-[16/10] overflow-hidden rounded-2xl order-1 lg:order-2 lg:aspect-[4/3] shadow-lg ring-1 ring-stone-900/5">
-            {/* Image: truck, work-in-progress, or backyard cleanout. Place files in /public */}
-            <Image
-              src="/junk-hero.jpg"
-              alt="Junk removal and hauling services"
-              fill
-              className="object-cover object-center"
-              priority
-              sizes="(max-width: 1024px) 100vw, 50vw"
+            <video
+              src="/hero-video.mov"
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="absolute inset-0 h-full w-full object-cover"
+              aria-label="Sandoval Commercial Disposal junk removal in action"
             />
           </div>
         </div>

@@ -11,7 +11,7 @@ export const BUSINESS = {
   phone: '909-545-9339',
 
   /* Email for quote requests and contact */
-  email: 'info@sandovalcommercial.com',
+  email: 'sandoval.anthony909@yahoo.com',
 
   /* Service area for footer and Service Area section */
   serviceArea: 'Southern California – homeowners, contractors & property managers',
