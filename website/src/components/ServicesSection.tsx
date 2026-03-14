@@ -2,11 +2,6 @@ import Image from 'next/image';
 
 const services = [
   {
-    title: 'Junk Removal',
-    description: 'Complete junk removal services for residential and commercial properties. Same-day service available.',
-    image: '/junk-cleanout.jpg',
-  },
-  {
     title: 'Light Demolition',
     description: 'Removal of construction debris including drywall, wood, pallets, and concrete.',
     image: '/junk-hero.jpg',
