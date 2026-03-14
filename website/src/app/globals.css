@@ -105,3 +105,11 @@ body {
 .group:hover .marquee-pause-on-hover {
   animation-play-state: paused;
 }
+
+/* Hide native video controls for hero autoplay */
+.hero-video video::-webkit-media-controls {
+  display: none !important;
+}
+.hero-video video::-webkit-media-controls-panel {
+  display: none !important;
+}
