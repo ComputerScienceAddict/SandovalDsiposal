@@ -31,6 +31,16 @@ const services = [
     description: 'Removal of branches, brush, leaves, and bulk yard waste. Properties left clean.',
     image: '/junk-backyard.jpg',
   },
+  {
+    title: '12 Yard Dump Trailer Rental',
+    description: 'Rent our 12 yard dump trailer for your project. Perfect for smaller cleanouts and hauling jobs.',
+    image: '/dump-trailer-rental.png',
+  },
+  {
+    title: '14 Yard Heavy Duty Dump Trailer Rental',
+    description: 'Heavy duty 14 yard dump trailer rental for larger projects. Reliable, professional equipment.',
+    image: '/dump-trailer-rental.png',
+  },
 ];
 
 const equipment = [
