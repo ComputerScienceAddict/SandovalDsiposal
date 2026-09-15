@@ -1,4 +1,9 @@
 {
   "installCommand": "npm install",
-  "buildCommand": "npm run build"
+  "buildCommand": "npm run build",
+  "env": {
+    "SMTP_HOST": "smtp.gmail.com",
+    "SMTP_PORT": "587",
+    "QUOTE_TO_EMAIL": "sandoval.anthony909@yahoo.com"
+  }
 }

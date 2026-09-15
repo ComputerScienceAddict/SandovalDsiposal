@@ -5,12 +5,14 @@ import { BUSINESS } from '@/lib/constants';
 
 export default function ContactSection() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
     const data = new FormData(form);
     setStatus('sending');
+    setErrorMessage('');
     try {
       const res = await fetch('/api/quote', {
         method: 'POST',
@@ -23,13 +25,16 @@ export default function ContactSection() {
           message: data.get('message'),
         }),
       });
+      const payload = (await res.json().catch(() => null)) as { error?: string } | null;
       if (!res.ok) {
+        setErrorMessage(payload?.error || 'Could not send your request. Please call or try again.');
         setStatus('error');
         return;
       }
       form.reset();
       setStatus('sent');
     } catch {
+      setErrorMessage('Network error. Please call or try again.');
       setStatus('error');
     }
   }
@@ -156,8 +161,13 @@ export default function ContactSection() {
               {status === 'sending' && 'Sending...'}
               {status === 'sent' && 'Thank you! We will contact you shortly.'}
               {status === 'idle' && 'Request Quote'}
-              {status === 'error' && 'Please try again'}
+              {status === 'error' && 'Try again'}
             </button>
+            {status === 'error' && errorMessage && (
+              <p className="mt-3 text-sm text-red-700" role="alert">
+                {errorMessage}
+              </p>
+            )}
           </form>
         </div>
       </div>

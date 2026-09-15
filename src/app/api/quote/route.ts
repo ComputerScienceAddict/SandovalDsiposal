@@ -1,9 +1,10 @@
 import { NextResponse } from 'next/server';
 import { BUSINESS } from '@/lib/constants';
-import { getMailer } from '@/lib/mail';
+import { getMailConfig, getMailer } from '@/lib/mail';
 import { buildQuoteEmail } from '@/lib/quote-email';
 
 export const runtime = 'nodejs';
+export const maxDuration = 30;
 
 const SERVICE_LABELS: Record<string, string> = {
   'junk-removal': 'Junk Removal',
@@ -42,10 +43,14 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Please enter a valid email address.' }, { status: 400 });
     }
 
-    const to = 'sandoval.anthony909@yahoo.com';
-    const fromUser = process.env.SMTP_USER;
-    if (!fromUser) {
-      return NextResponse.json({ error: 'Email is not configured.' }, { status: 500 });
+    const to = process.env.QUOTE_TO_EMAIL?.trim() || 'sandoval.anthony909@yahoo.com';
+    const { user: fromUser, pass } = getMailConfig();
+    if (!fromUser || !pass) {
+      console.error('Quote email failed: missing SMTP_USER or SMTP_PASS on server');
+      return NextResponse.json(
+        { error: 'Quote email is not configured on the server yet. Please call or text us directly.' },
+        { status: 503 },
+      );
     }
 
     const mailer = getMailer();
