@@ -8,10 +8,30 @@ export default function ContactSection() {
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    const form = e.currentTarget;
+    const data = new FormData(form);
     setStatus('sending');
-    /* UPDATE: Connect form to your lead capture (email API, CRM, Zapier, etc.) */
-    await new Promise((r) => setTimeout(r, 800));
-    setStatus('sent');
+    try {
+      const res = await fetch('/api/quote', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: data.get('name'),
+          phone: data.get('phone'),
+          email: data.get('email'),
+          service: data.get('service'),
+          message: data.get('message'),
+        }),
+      });
+      if (!res.ok) {
+        setStatus('error');
+        return;
+      }
+      form.reset();
+      setStatus('sent');
+    } catch {
+      setStatus('error');
+    }
   }
 
   return (
@@ -130,7 +150,7 @@ export default function ContactSection() {
             </div>
             <button
               type="submit"
-              disabled={status === 'sending'}
+              disabled={status === 'sending' || status === 'sent'}
               className="mt-6 w-full min-h-[52px] rounded-full bg-stone-900 px-4 py-3 text-white font-bold hover:bg-stone-800 active:scale-[0.98] disabled:opacity-70 transition-all"
             >
               {status === 'sending' && 'Sending...'}

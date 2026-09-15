@@ -32,12 +32,12 @@ export default function StickyCallCTA() {
       >
         Call Now
       </a>
-      <a
+      <Link
         href="/#contact"
         className="flex-1 min-w-0 min-h-[50px] flex items-center justify-center rounded-full border-2 border-[#A96D62] py-3 text-center text-[15px] font-bold text-[#A96D62] bg-white/80 hover:bg-[#A96D62] hover:text-white active:scale-[0.97] transition-all touch-manipulation"
       >
         Free Quote
-      </a>
+      </Link>
     </div>
   );
 }

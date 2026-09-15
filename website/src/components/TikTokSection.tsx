@@ -14,9 +14,6 @@ const TIKTOK_VIDEOS = [
   '7601689476766731534',
 ];
 
-const CARD_WIDTH = 380;
-const CARD_GAP = 24;
-
 export default function TikTokSection() {
   const [index, setIndex] = useState(0);
   const [perView, setPerView] = useState(1);

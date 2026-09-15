@@ -6,14 +6,8 @@ const STORAGE_KEY = 'sandoval-ping-seen';
 
 export default function WelcomePing() {
   const [visible, setVisible] = useState(false);
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  useEffect(() => {
-    if (!mounted) return;
     const seen = sessionStorage.getItem(STORAGE_KEY);
     if (seen) return;
     const timer = setTimeout(() => {
@@ -21,7 +15,7 @@ export default function WelcomePing() {
       sessionStorage.setItem(STORAGE_KEY, '1');
     }, 800);
     return () => clearTimeout(timer);
-  }, [mounted]);
+  }, []);
 
   const openChat = () => {
     window.dispatchEvent(new CustomEvent('open-chat'));

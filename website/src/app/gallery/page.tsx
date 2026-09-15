@@ -1,6 +1,7 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import StickyCallCTA from '@/components/StickyCallCTA';
+import GalleryVideos from '@/components/GalleryVideos';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -43,6 +44,18 @@ export default function GalleryPage() {
               </p>
             </div>
           </div>
+          <div className="mb-10">
+            <h2 className="mb-4 text-lg font-bold text-stone-900 sm:text-xl">
+              Job videos
+            </h2>
+            <p className="mb-5 text-stone-600 text-sm">
+              Watch our crew on site — tap a video to play
+            </p>
+            <GalleryVideos />
+          </div>
+          <h2 className="mb-4 text-lg font-bold text-stone-900 sm:text-xl">
+            Project photos
+          </h2>
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-3 md:grid-cols-4 md:gap-4 lg:grid-cols-5 lg:gap-4">
             {images.map((img, i) => (
               <div

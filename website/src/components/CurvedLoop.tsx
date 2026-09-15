@@ -37,6 +37,7 @@ const CurvedLoop: FC<CurvedLoopProps> = ({
   const pathD = `M-50,50 Q700,${50 + curveAmount} 3200,50`;
 
   const dragRef = useRef(false);
+  const [dragging, setDragging] = useState(false);
   const lastXRef = useRef(0);
   const dirRef = useRef<'left' | 'right'>(direction);
   const velRef = useRef(0);
@@ -50,15 +51,17 @@ const CurvedLoop: FC<CurvedLoopProps> = ({
   const ready = spacing > 0;
 
   useEffect(() => {
-    if (measureRef.current) setSpacing(measureRef.current.getComputedTextLength());
+    if (measureRef.current) {
+      const next = measureRef.current.getComputedTextLength();
+      setSpacing(next);
+      setOffset(-next);
+    }
   }, [text, className]);
 
   useEffect(() => {
     if (!spacing) return;
     if (textPathRef.current) {
-      const initial = -spacing;
-      textPathRef.current.setAttribute('startOffset', initial + 'px');
-      setOffset(initial);
+      textPathRef.current.setAttribute('startOffset', -spacing + 'px');
     }
   }, [spacing]);
 
@@ -85,6 +88,7 @@ const CurvedLoop: FC<CurvedLoopProps> = ({
   const onPointerDown = (e: PointerEvent) => {
     if (!interactive) return;
     dragRef.current = true;
+    setDragging(true);
     lastXRef.current = e.clientX;
     velRef.current = 0;
     (e.target as HTMLElement).setPointerCapture(e.pointerId);
@@ -107,10 +111,11 @@ const CurvedLoop: FC<CurvedLoopProps> = ({
   const endDrag = () => {
     if (!interactive) return;
     dragRef.current = false;
+    setDragging(false);
     dirRef.current = velRef.current > 0 ? 'right' : 'left';
   };
 
-  const cursorStyle = interactive ? (dragRef.current ? 'grabbing' : 'grab') : 'auto';
+  const cursorStyle = interactive ? (dragging ? 'grabbing' : 'grab') : 'auto';
 
   const containerClass = banner
     ? 'h-14 sm:h-10 flex items-center justify-center w-full bg-[#C48376] overflow-hidden touch-none'

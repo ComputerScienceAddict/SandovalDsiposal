@@ -50,14 +50,14 @@ export default function Navbar() {
         <div className="hidden lg:flex lg:items-center lg:gap-3 xl:gap-4 shrink-0">
           {navLinks.map((link) =>
             link.href === '/#tiktok' ? (
-              <a
+              <Link
                 key={link.href}
                 href="/#tiktok"
                 onClick={handleVideosClick}
                 className="text-stone-700 hover:text-stone-900 text-xs font-semibold whitespace-nowrap transition-colors cursor-pointer"
               >
                 {link.label}
-              </a>
+              </Link>
             ) : (
               <Link
                 key={link.href}
@@ -127,14 +127,14 @@ export default function Navbar() {
           <div className="flex flex-col">
             {navLinks.map((link) =>
               link.href === '/#tiktok' ? (
-                <a
+                <Link
                   key={link.href}
                   href="/#tiktok"
                   onClick={handleVideosClick}
                   className="min-h-[48px] flex items-center text-stone-600 hover:text-stone-900 font-medium border-b border-stone-200/60 last:border-0 active:bg-stone-100/50 -mx-4 px-4 transition-colors cursor-pointer"
                 >
                   {link.label}
-                </a>
+                </Link>
               ) : (
                 <Link
                   key={link.href}
