@@ -41,9 +41,7 @@ npm run build
 npm start
 ```
 
-Deploy to [Vercel](https://vercel.com): connect this repo on `main`. The Next.js app is at the **repository root** (default Root Directory). Add SMTP environment variables from `.env.example` for live quote emails.
-
-If you previously set Vercel **Root Directory** to `website`, reset it to the repo root (empty / `.`) before redeploying.
+Deploy to [Vercel](https://vercel.com): connect this repo on `main` and redeploy. The Next.js app is at the **repository root**. Root Directory can be **`.` (default)** or **`website`** — both are supported. Add SMTP variables from `.env.example` for quote emails.
 
 ## Project Structure
 

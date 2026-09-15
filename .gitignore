@@ -27,5 +27,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Legacy app folder (removed)
-website/
+# Legacy folder shim for Vercel Root Directory = website
+website/*
+!website/package.json
+!website/vercel.json

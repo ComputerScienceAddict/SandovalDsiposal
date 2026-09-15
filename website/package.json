@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "npm run build --prefix .."
+  },
+  "dependencies": {
+    "next": "16.1.6"
+  }
+}
