@@ -5,6 +5,7 @@ website/node_modules/
 # Next.js
 website/.next/
 website/out/
+.next/
 
 # Build
 website/build/

@@ -43,7 +43,7 @@ npm run build
 npm start
 ```
 
-Or deploy to [Vercel](https://vercel.com) for one-click hosting.
+Or deploy to [Vercel](https://vercel.com): connect this repo on `main` and redeploy. The root `vercel.json` builds the Next.js app from `website/`. Add the SMTP environment variables from `website/.env.example` for live quote emails.
 
 ## Project Structure
 
