@@ -1,14 +1,10 @@
 # Dependencies
 node_modules/
-website/node_modules/
 
 # Next.js
-website/.next/
-website/out/
 .next/
-
-# Build
-website/build/
+out/
+build/
 
 # Misc
 .DS_Store
@@ -29,4 +25,7 @@ yarn-error.log*
 
 # TypeScript
 *.tsbuildinfo
-website/next-env.d.ts
+next-env.d.ts
+
+# Legacy app folder (removed)
+website/
